@@ -12,6 +12,7 @@
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
@@ -191,6 +192,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="Text" sid="3730901105368717">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -201,6 +205,7 @@
         <layout>Layout 4.xml</layout>
         <layout>Layout 5.xml</layout>
         <layout>Layout 6.xml</layout>
+        <layout>Layout 7.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
