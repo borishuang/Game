@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="TouchY" sid="7993812311843247" static="0" type="number">0</variable>
+        <variable constant="0" name="TouchX" sid="4064346890349267" static="0" type="number">0</variable>
+        <variable constant="0" name="Begin" sid="7164728767823977" static="0" type="number">0</variable>
+        <variable constant="0" name="Level" sid="5346367369469385" static="0" type="number">1</variable>
+        <event-group description="Base" sid="1100608528867041" title="Base">
+            <sub-events>
+                <event-block sid="878396599817427">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="6078329757972162" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="8643249391482613" type="System">
+                            <param id="0" name="Variable">Begin</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3710577740011575">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="7467671871121644" type="Touch">
+                            <param id="0" name="Object">Home</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="2384686554188416" type="System">
+                            <param id="0" name="Layout">Layout</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4540481677727309">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="2985916592513862" type="Touch">
+                            <param id="0" name="Object">Refresh</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="818510901634472" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="touch create line" sid="5701753475310988" title="touch event">
+            <sub-events>
+                <event-block sid="4575179045826737">
+                    <conditions>
+                        <condition id="0" name="On any touch start" sid="6993967255114138" type="Touch" />
+                        <condition id="4" inverted="1" name="Is touching object" sid="9163862104085226" type="Touch">
+                            <param id="0" name="Object">Sprite</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="2737886081074233" type="Touch">
+                            <param id="0" name="Object">Ball</param>
+                        </condition>
+                        <condition id="4" inverted="1" name="Is touching object" sid="2511466686587049" type="Touch">
+                            <param id="0" name="Object">Ground</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="620718971200352" type="System">
+                            <param id="0" name="Variable">Begin</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7527179719403133" type="System">
+                            <param id="0" name="Variable">TouchX</param>
+                            <param id="1" name="Value">Touch.X</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="7198099860621697" type="System">
+                            <param id="0" name="Variable">TouchY</param>
+                            <param id="1" name="Value">Touch.Y</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="2515892820324738" type="System">
+                            <param id="0" name="Object to create">Line</param>
+                            <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                            <param id="2" name="X">TouchX</param>
+                            <param id="3" name="Y">TouchY</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4686686641992941">
+                    <conditions>
+                        <condition id="2" name="Is in touch" sid="3273170622639908" type="Touch" />
+                        <condition id="-14" name="Compare variable" sid="8487933959259228" type="System">
+                            <param id="0" name="Variable">TouchX</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="882779256616905" type="System">
+                            <param id="0" name="Variable">TouchY</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="8501078829875744" type="System">
+                            <param id="0" name="Variable">Begin</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="7509909510218582" type="Line">
+                            <param id="0" name="Angle">angle(Touch.X, Touch.Y, TouchX, TouchY) + 180</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="5367565897661634" type="Line">
+                            <param id="0" name="Width">distance(Touch.X, Touch.Y, TouchX, TouchY)</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="7960012432113118" type="Line">
+                            <param id="0" name="Height">10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8822956295987263">
+                    <conditions>
+                        <condition id="1" name="On any touch end" sid="6426556520826548" type="Touch" />
+                        <condition id="-3" name="Is on-screen" sid="161924659050732" type="Line" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5624368571247186" type="Line" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="383065284895953">
+                            <conditions>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="1953447977681479" type="Line">
+                                    <param id="0" name="Object">Ball</param>
+                                </condition>
+                                <condition id="1" inverted="1" name="Is overlapping another object" sid="3078601012613631" type="Line">
+                                    <param id="0" name="Object">Sprite</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="1154581109194592" type="System">
+                                    <param id="0" name="Object to create">Bridge</param>
+                                    <param id="1" name="Layer">&quot;Layer 0&quot;</param>
+                                    <param id="2" name="X">TouchX</param>
+                                    <param id="3" name="Y">TouchY</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="6367548834967283" type="Bridge">
+                                    <param id="0" name="Angle">Line.Angle</param>
+                                </action>
+                                <action id="-5" name="Set width" sid="8564169169178828" type="Bridge">
+                                    <param id="0" name="Width">Line.Width</param>
+                                </action>
+                                <action id="-6" name="Set height" sid="2105529104709692" type="Bridge">
+                                    <param id="0" name="Height">Line.Height</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="828555054782771">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="239511421720653" type="Touch">
+                            <param id="0" name="Object">Sprite</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="4036165878965478" type="Sprite">
+                            <param id="0" name="Setting">0</param>
+                        </action>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="5277010279645187" type="Ball">
+                            <param id="0" name="Setting">0</param>
+                        </action>
+                        <action behavior="Physics" id="21" name="Set immovable" sid="5169899412164902" type="Bridge">
+                            <param id="0" name="Setting">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="5472338635430076" type="System">
+                            <param id="0" name="Variable">Begin</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="collision with ball" sid="766945414395234" title="collision">
+            <sub-events>
+                <event-block sid="1985060770345159">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5060490098323116" type="Sprite">
+                            <param id="0" name="Object">Ball</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-43" name="Go to next/previous layout" sid="6799633126628357" type="System">
+                            <param id="0" name="Which">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="fail" sid="7149595429919059" title="game over">
+            <sub-events>
+                <event-block sid="3444779886294007">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="7992396768440385" type="Ball" />
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="1864037218208612" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="4241220928665672">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="8826587934390208" type="Sprite" />
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="9563799838887467" type="System" />
+                    </actions>
+                </event-block>
+                <event-block sid="1236771589759178">
+                    <conditions>
+                        <condition behavior="Physics" id="0" name="Is sleeping" sid="1781627233598777" type="Ball" />
+                        <condition behavior="Physics" id="0" name="Is sleeping" sid="5370053338612736" type="Sprite" />
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="4227896751752192" type="System" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

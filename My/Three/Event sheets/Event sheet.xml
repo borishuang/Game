@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet</name>
+    <events>
+        <event-group description="Choose Level" sid="212566823508208" title="Choose Level" />
+        <event-block sid="9494775603680651">
+            <conditions>
+                <condition id="3" name="On touched object" sid="1185873896894404" type="Touch">
+                    <param id="0" name="Object">Block</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7778126692791257">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="71632950883384" type="Block">
+                            <param id="0" name="Unique ID">20</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="5409479092983527" type="System">
+                            <param id="0" name="Layout">Layout 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9879030865739124">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="2433613881381736" type="Block">
+                            <param id="0" name="Unique ID">24</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="7659926007189903" type="System">
+                            <param id="0" name="Layout">Layout 2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6339292124913033">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="5262310381055706" type="Block">
+                            <param id="0" name="Unique ID">26</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="2467057602964973" type="System">
+                            <param id="0" name="Layout">Layout 3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1152409444943584">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="2245444188459132" type="Block">
+                            <param id="0" name="Unique ID">23</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="537514242676042" type="System">
+                            <param id="0" name="Layout">Layout 4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6733799125192424">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="2459552731393707" type="Block">
+                            <param id="0" name="Unique ID">25</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="4280463330115261" type="System">
+                            <param id="0" name="Layout">Layout 5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2584920296961515">
+                    <conditions>
+                        <condition id="-14" name="Pick by unique ID" sid="8024581154233776" type="Block">
+                            <param id="0" name="Unique ID">27</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="5357532287449338" type="System">
+                            <param id="0" name="Layout">Layout 6</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
